@@ -1,0 +1,17 @@
+.header {
+    &__navbar {
+        border-bottom: 1px solid var(--emk-brand-color);
+        background: white;
+    }
+
+    &__logo {
+        width: 90px;
+        max-width: 100%;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}

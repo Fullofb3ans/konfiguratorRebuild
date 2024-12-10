@@ -1,0 +1,36 @@
+.content-container {
+    margin: auto;
+
+    @include xxl {
+        max-width: 1320px;
+    }
+
+    @include xl {
+        max-width: 1140px;
+    }
+
+    @include lg {
+        max-width: 960px;
+    }
+
+    @include md {
+        max-width: 720px;
+    }
+
+    @include sm {
+        max-width: 540px;
+    }
+}
+
+.mainContent {
+    min-height: 100vh;
+    font-size: large;
+}
+
+.none {
+    display: none;
+}
+
+label {
+    cursor: pointer;
+}
