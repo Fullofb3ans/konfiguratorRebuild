@@ -8,11 +8,10 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: Home,
-      alias: '/'
     },
     {
       path: '/engine',
-      name: 'EnginePage',
+      name: 'enginePage',
       component: () => import('../views/EnginePage.vue')
     },
 

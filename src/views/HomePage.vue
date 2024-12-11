@@ -4,11 +4,8 @@
             <div class="engine-selector__item"
                  v-for="item in homePageEngines"
                  :key="item.id">
-                <div class="engine-card engine-card--glass"
-                     @click="router.push({ name: 'EnginePage' })">
-                    <!-- <img :src="item.imgSrc"
-                         class="engine-card__image"
-                         alt="..." /> -->
+                <RouterLink :to="{ name: item.route }"
+                            class="engine-card engine-card--glass">
                     <div class="engine-card__image"
                          :style="{ backgroundImage: `url(${item.imgSrc})` }"></div>
                     <div class="engine-card__body">
@@ -17,7 +14,7 @@
                             {{ item.description }}
                         </p>
                     </div>
-                </div>
+                </RouterLink>
             </div>
         </div>
     </div>

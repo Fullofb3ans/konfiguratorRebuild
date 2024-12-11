@@ -1,47 +1,65 @@
 <template>
     <nav class="header__navbar navbar bg-body-tertiary">
         <div class="header-container container-fluid">
-            <img class="header__logo" src="/imgs/logo.svg" @click="router.push('/')" />
-            <a class="navbar-brand" href="#">Конфигуратор Регулятор</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <RouterLink :to="{ name: 'home' }">
+                <img class="header__logo"
+                     src="/imgs/logo.svg" />
+            </RouterLink>
+            <div class="navbar-brand">Конфигуратор Регулятор</div>
+            <button class="navbar-toggler"
+                    type="button"
+                    @click="toggleSidebar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Конфигуратор</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+
+            <div class="sidebar"
+                 :class="{ 'sidebar-active': isSidebarOpen }">
+                <div class="sidebar-header">
+                    <h5>Конфигуратор</h5>
+                    <button class="btn-close"
+                            @click="toggleSidebar" />
                 </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">Личный кабинет</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Главная</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">ЭПН</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">ЭП4</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">ЭП4(РН)</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">ЭП по ТУ-...-89</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">ВИМУ</a>
+                <div class="sidebar-content">
+                    <ul class="sidebar-nav">
+                        <li v-for="(item, index) in sideNavigation"
+                            :key="index">
+                            <RouterLink :to="{ name: item.route }"
+                                        class="sidebar-link"
+                                        @click="toggleSidebar">
+                                {{ item.title }}
+                            </RouterLink>
                         </li>
                     </ul>
                 </div>
             </div>
+
+            <div class="sidebar-overlay"
+                 :class="{ 'overlay-active': isSidebarOpen }"
+                 @click="toggleSidebar"></div>
         </div>
     </nav>
 </template>
 
-<script setup>
+<script>
+import { ref } from "vue";
 import { useRouter } from "vue-router";
-const router = useRouter();
+import sideNavigation from "@/assets/staticJsons/sideNavigation.json";
+
+export default {
+    setup() {
+        const router = useRouter();
+        const isSidebarOpen = ref(false);
+
+        const toggleSidebar = () => {
+            isSidebarOpen.value = !isSidebarOpen.value;
+        };
+
+        return {
+            router,
+            sideNavigation,
+            isSidebarOpen,
+            toggleSidebar
+        }
+    }
+}
 </script>

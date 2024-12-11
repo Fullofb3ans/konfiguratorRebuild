@@ -23,7 +23,7 @@
 }
 
 .main-content {
-    min-height: 100vh;
+    min-height: 90vh;
     font-size: large;
 }
 
@@ -33,4 +33,9 @@
 
 label {
     cursor: pointer;
+}
+
+a {
+    color: black;
+    text-decoration: none;
 }
