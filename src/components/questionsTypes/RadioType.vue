@@ -32,13 +32,3 @@ export default {
     }
 }
 </script>
-<style>
-.form-check-input:checked {
-    background-color: var(--emk-brand-color);
-    border-color: var(--emk-brand-color);
-}
-
-.form-check-input:focus {
-    box-shadow: 0 0 0 0.25rem rgb(253 43 13 / 25%);
-}
-</style>
