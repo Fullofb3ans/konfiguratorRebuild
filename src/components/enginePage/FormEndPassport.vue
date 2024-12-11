@@ -15,7 +15,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="summary__cards__grid-wrapper">
                 <div class="summary__card card mb-4"
                      v-for="item in passport.slice(0, 2)"

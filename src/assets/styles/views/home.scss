@@ -28,7 +28,7 @@
         cursor: pointer;
 
         &:hover>&__image {
-            transform: scale(1.05);
+            transform: scale(1.08);
         }
 
         &__body {
@@ -39,10 +39,12 @@
         }
 
         &__image {
-            padding: 10px;
             width: 100%;
-            object-fit: contain;
-            transition: 0.3s;
+            height: 200px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            transition: 0.2s all;
         }
     }
 

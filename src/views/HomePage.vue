@@ -6,9 +6,11 @@
                  :key="item.id">
                 <div class="engine-card engine-card--glass"
                      @click="router.push({ name: 'EnginePage' })">
-                    <img :src="item.imgSrc"
+                    <!-- <img :src="item.imgSrc"
                          class="engine-card__image"
-                         alt="..." />
+                         alt="..." /> -->
+                    <div class="engine-card__image"
+                         :style="{ backgroundImage: `url(${item.imgSrc})` }"></div>
                     <div class="engine-card__body">
                         <h5 class="engine-card__title">{{ item.title }}</h5>
                         <p class="engine-card__description">
