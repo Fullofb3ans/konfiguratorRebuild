@@ -59,7 +59,6 @@ export default {
         showAutoParams: Boolean,
     },
     setup() {
-
         return {
             passport
         }

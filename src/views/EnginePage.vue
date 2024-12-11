@@ -44,13 +44,13 @@
 import { ref, computed } from "vue";
 
 import ArrowLeft from "@/assets/icons/ArrowLeft.vue";
-import EngineMark from "../components/engine-page/EngineMark.vue";
-import Passport from "../components/engine-page/Passport.vue";
+import EngineMark from "../components/enginePage/EngineMark.vue";
+import Passport from "../components/enginePage/FormEndPassport.vue";
 import SelectType from "../components/questionsTypes/SelectType.vue";
 import TextType from "../components/questionsTypes/TextType.vue";
 import CheckboxType from "../components/questionsTypes/CheckboxType.vue";
 import RadioType from "../components/questionsTypes/RadioType.vue";
-import AutoParams from "../components/engine-page/AutoParams.vue";
+import AutoParams from "../components/enginePage/AutoParams.vue";
 
 import questionsPp from "@/assets/staticJsons/questionBank.json";
 import routesToParams from "@/assets/staticJsons/routesToParams.json";

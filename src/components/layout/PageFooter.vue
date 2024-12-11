@@ -1,10 +1,9 @@
-<script setup></script>
 <template>
-  <footer class="bg-light mt-auto">
-    <div class="container">
+  <footer class="footer-wrapper bg-light mt-auto">
+    <div class="footer-container container">
       <div class="row">
         <div class="col-md-6">
-          <p>&copy; 2023</p>
+          <p>&copy; {{ currentYear }}</p>
         </div>
         <div class="col-md-6 text-md-end">
           <ul class="list-inline">
@@ -17,13 +16,13 @@
     </div>
   </footer>
 </template>
-<style scoped>
-.container {
-  padding-top: 15px;
-}
+<script>
+export default {
+  setup() {
 
-.bg-light {
-  border-top: 1px solid var(--emk-brand-color);
-  background: white;
+    return {
+      currentYear: (new Date).getFullYear(),
+    }
+  }
 }
-</style>
+</script>

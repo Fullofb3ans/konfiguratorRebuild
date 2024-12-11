@@ -1,11 +1,17 @@
 <template>
-    <Header />
-    <div class="mainContent">
+    <PageHeader />
+    <div class="main-content">
         <RouterView />
     </div>
-    <Footer />
+    <PageFooter />
 </template>
-<script setup>
-import Header from "./components/layout/Header.vue";
-import Footer from "./components/layout/Footer.vue";
+<script>
+import PageHeader from "./components/layout/PageHeader.vue";
+import PageFooter from "./components/layout/PageFooter.vue";
+export default {
+    components: {
+        PageHeader,
+        PageFooter
+    }
+}
 </script>
