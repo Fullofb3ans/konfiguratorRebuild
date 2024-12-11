@@ -7,8 +7,9 @@
         </div>
         <div class="col-md-6 text-md-end">
           <ul class="list-inline">
-            <li class="list-inline-item">
-              <a href="#">Поддержка сайта</a>
+            <li class="list-inline-item footer__support">
+              <div class="footer__support__text"
+                   @click="callSupportModal">Поддержка сайта</div>
             </li>
           </ul>
         </div>
@@ -18,10 +19,14 @@
 </template>
 <script>
 export default {
-  setup() {
+  setup(props, { emit }) {
 
+    const callSupportModal = () => {
+      emit('callSupportModal');
+    }
     return {
       currentYear: (new Date).getFullYear(),
+      callSupportModal
     }
   }
 }
